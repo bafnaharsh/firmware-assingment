@@ -21,7 +21,7 @@ ISR(TIMER1_OVF_vect)
   adcValue = ADC; // Read 10-bit ADC value
 
   // Calculate temperature in degrees Celsius
-  float temperature = (adcValue *(5/1023)) / 10000;
+  float temperature = (adcValue * 5.0 * 100.0) / 1024.0;
 
   // Control LED blinking rate based on temperature
   if (temperature < TEMPERATURE_THRESHOLD) {
